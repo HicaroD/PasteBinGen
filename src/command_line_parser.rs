@@ -1,6 +1,5 @@
 use clap::*;
 
-///
 #[derive(Parser, Debug)]
 #[clap(author = "PasteBinGen", version, about = "A simple CLI for writing PasteBin texts.", long_about = None)]
 pub struct Args {
