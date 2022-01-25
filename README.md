@@ -1,4 +1,5 @@
 # PasteBinGen
+**WORK IN PROGRESS**
 :memo: A command-line interface for writing a PasteBin easily. 
 
 ## Summary
