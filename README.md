@@ -27,7 +27,6 @@ OPTIONS:
     -a, --api-key <API_KEY>    PasteBin API key [default: default]
     -h, --help                 Print help information
     -V, --version              Print version information
-
    ```
    
 ### License
