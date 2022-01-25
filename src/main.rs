@@ -1,17 +1,12 @@
+mod command_line_parser;
 mod config;
 
 fn main() {
-    let config_file_path = "config.json".to_string();
+    let args = command_line_parser::get_command_line_arguments();
 
-    if config::config_file_exists(&config_file_path){
-        println!("Config file exists!");
-    }
+    let config = config::APIConfiguration {
+        api_key: args.api_key,
+    };
 
-    else {
-        let config = config::APIConfiguration {
-            api_key: "something".to_string(),
-        };
-
-        config::create_configuration_file(&config);
-    }
+    config::create_configuration_file(&config);
 }
