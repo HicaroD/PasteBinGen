@@ -16,7 +16,18 @@
    That's gonna be the output:
    
    ```
-    TODO!
+pastebin_gen 0.1.0
+PasteBinGen
+A simple CLI for writing PasteBin texts.
+
+USAGE:
+    pastebin_gen [OPTIONS]
+
+OPTIONS:
+    -a, --api-key <API_KEY>    PasteBin API key [default: default]
+    -h, --help                 Print help information
+    -V, --version              Print version information
+
    ```
    
 ### License
