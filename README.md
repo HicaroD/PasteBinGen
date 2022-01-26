@@ -14,8 +14,6 @@
 ### Usage
 
    The usage is pretty straightforward. However, if you need help, try to run `pastebin_gen --help`.
-
-   That's gonna be the output:
    
    ```
 pastebin_gen 0.1.0
