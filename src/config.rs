@@ -37,8 +37,8 @@ pub fn deserialize_configuration_file() -> JSONResponse {
 
     match config_file {
         Ok(config_file_content) => {
-            let api_key = serde_json::from_str::<JSONResponse>(&config_file_content).unwrap();
-            api_key
+            let config_file = serde_json::from_str::<JSONResponse>(&config_file_content).unwrap();
+            config_file
         }
 
         Err(err) => panic!("Error while trying to read configuration file: {}", err),
