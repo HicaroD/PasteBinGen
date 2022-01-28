@@ -10,11 +10,6 @@ pub struct APIConfiguration {
     pub api_key: String,
 }
 
-pub fn config_file_exists() -> bool {
-    use std::path::Path;
-    Path::new("config.json").exists()
-}
-
 pub fn write_api_key_to_config_file(configuration: &APIConfiguration) {
     let config_file = File::create("config.json").expect("Can't create file");
     serde_json::to_writer_pretty(config_file, configuration).expect("Invalid configuration");
