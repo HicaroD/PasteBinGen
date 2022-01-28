@@ -30,15 +30,20 @@ pub fn create_configuration_file(configuration: &APIConfiguration) {
     }
 }
 
-pub fn deserialize_configuration_file() -> JSONResponse {
-    let config_file = fs::read_to_string("config.json");
+pub fn deserialize_configuration_file() -> Option<JSONData> {
+    if config_file_exists(){
+        let config_file = fs::read_to_string("config.json");
 
-    match config_file {
-        Ok(config_file_content) => {
-            let config_file = serde_json::from_str::<JSONResponse>(&config_file_content).unwrap();
-            config_file
+        match config_file {
+            Ok(config_file_content) => {
+                let config_file = serde_json::from_str::<JSONData>(&config_file_content).unwrap();
+                Some(config_file)
+            }
+
+            Err(err) => panic!("Error while trying to read configuration file: {}", err),
         }
-
-        Err(err) => panic!("Error while trying to read configuration file: {}", err),
+    }
+    else {
+        None
     }
 }
