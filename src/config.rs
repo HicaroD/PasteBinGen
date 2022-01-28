@@ -3,11 +3,16 @@ use std::collections::HashMap;
 use std::fs;
 use std::fs::File;
 
-type JSONResponse = HashMap<String, String>;
+type JSONData = HashMap<String, String>;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct APIConfiguration {
     pub api_key: String,
+}
+
+pub fn config_file_exists() -> bool {
+    use std::path::Path;
+    Path::new("config.json").exists()
 }
 
 pub fn write_api_key_to_config_file(configuration: &APIConfiguration) {
