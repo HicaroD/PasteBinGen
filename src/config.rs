@@ -25,9 +25,7 @@ pub fn api_key_flag_was_passed(configuration: &APIConfiguration) -> bool {
 }
 
 pub fn create_configuration_file(configuration: &APIConfiguration) {
-    if (!config_file_exists() && api_key_flag_was_passed(configuration))
-        || (config_file_exists() && api_key_flag_was_passed(configuration))
-    {
+    if api_key_flag_was_passed(configuration){
         write_api_key_to_config_file(configuration);
     }
 }
