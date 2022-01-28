@@ -4,7 +4,7 @@ use clap::*;
 #[clap(author = "PasteBinGen", version, about = "A simple CLI for writing PasteBin texts.", long_about = None)]
 pub struct Args {
     /// PasteBin API key
-    #[clap(short, long, default_value = "default")]
+    #[clap(short, long, default_value = "default", required = false)]
     pub api_key: String,
 }
 
