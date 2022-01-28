@@ -32,7 +32,7 @@ pub fn create_configuration_file(configuration: &APIConfiguration) {
     }
 }
 
-pub fn get_api_key_from_configuration_file() -> JSONResponse {
+pub fn deserialize_configuration_file() -> JSONResponse {
     let config_file = fs::read_to_string("config.json");
 
     match config_file {

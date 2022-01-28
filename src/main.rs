@@ -9,7 +9,7 @@ fn main() {
     };
 
     config::create_configuration_file(&config);
-    let config_file = config::get_api_key_from_configuration_file();
+    let config_file = config::deserialize_configuration_file();
     let api_key = config_file.get("api_key");
 
     match api_key {
