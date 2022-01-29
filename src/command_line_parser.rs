@@ -6,6 +6,10 @@ pub struct Args {
     /// PasteBin API key
     #[clap(short, long, default_value = "default", required = false)]
     pub api_key: String,
+
+    /// Path to file that you want to upload
+    #[clap(short, long, required = true)]
+    pub path: String,
 }
 
 pub fn get_command_line_arguments() -> Args {
