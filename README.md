@@ -8,7 +8,8 @@
 1. [Installation](#installation)
 2. [Usage](#usage)
 3. [Help](#help)
-4. [License](#license)
+4. [Limitations](#limitations)
+5. [License](#license)
 
 ### Installation
 
@@ -37,5 +38,9 @@ OPTIONS:
     -V, --version              Print version information
    ```
    
+### Limitations
+   1. **Maximum 10 pastes per 24h**
+   The PasteBin API doesn't allow a free user to create more than 10 pastes per 24 hours.
+
 ### License
 This project is licensed under the [MIT](LICENSE) license.
