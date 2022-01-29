@@ -27,11 +27,12 @@ PasteBinGen
 A simple CLI for writing PasteBin texts.
 
 USAGE:
-    pastebin_gen [OPTIONS]
+    pastebin_gen [OPTIONS] --path <PATH>
 
 OPTIONS:
     -a, --api-key <API_KEY>    PasteBin API key [default: default]
     -h, --help                 Print help information
+    -p, --path <PATH>          Path to file that you want to upload
     -V, --version              Print version information
    ```
    
