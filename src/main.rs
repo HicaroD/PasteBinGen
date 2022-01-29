@@ -1,7 +1,11 @@
 mod command_line_parser;
+mod api_helper;
 mod config;
 
-fn main() {
+use reqwest::Error;
+
+#[tokio::main]
+async fn main() -> Result<(), Error> {
     let args = command_line_parser::get_command_line_arguments();
 
     let config = config::APIConfiguration {
@@ -9,11 +13,10 @@ fn main() {
     };
 
     config::create_configuration_file(&config);
-    let config_file = config::deserialize_configuration_file();
-    let api_key = config_file.get("api_key");
+    let config_file = config::deserialize_configuration_file().unwrap();
+    let api_key = config_file.get("api_key").unwrap();
 
-    match api_key {
-        Some(value) => println!("{}", value),
-        None => println!("There is no value in this key!"),
-    }
+    let res = api_helper::send_paste_request(&api_key);
+    println!("{:#?}", res.await?.text().await?);
+    Ok(())
 }
