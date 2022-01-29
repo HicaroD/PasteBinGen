@@ -1,6 +1,7 @@
-mod command_line_parser;
 mod api_helper;
+mod command_line_parser;
 mod config;
+mod file_handler;
 
 use reqwest::Error;
 
@@ -16,7 +17,8 @@ async fn main() -> Result<(), Error> {
     let config_file = config::deserialize_configuration_file().unwrap();
     let api_key = config_file.get("api_key").unwrap();
 
-    let res = api_helper::send_paste_request(&api_key);
-    println!("{:#?}", res.await?.text().await?);
+    let file_data = file_handler::get_file_as_string(args.path);
+    let res = api_helper::post_pastebin(api_key.to_string(), file_data);
+    println!("{}", res.await?.text().await?);
     Ok(())
 }
