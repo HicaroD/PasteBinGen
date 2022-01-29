@@ -7,7 +7,8 @@
 
 1. [Installation](#installation)
 2. [Usage](#usage)
-3. [License](#license)
+3. [Help](#help)
+4. [License](#license)
 
 ### Installation
 
