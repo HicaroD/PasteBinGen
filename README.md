@@ -14,8 +14,8 @@
 ### Usage
    1. If it's the first time you're using the program, you should configure the API key of PasteBin.
 
-   In order to do that, you need to create an account in [PasteBin website](https://pastebin.com/signup). After that, go to [here](https://pastebin.com/doc_api) and find the section **"Your Unique Developer API Key"**. Copy the key above and run the program `pastebin_gen --config YOUR_API_KEY_HERE`.
-   Now you can use the program.
+      In order to do that, you need to create an account in [PasteBin website](https://pastebin.com/signup). After that, go to [here](https://pastebin.com/doc_api) and find the section **"Your Unique Developer API Key"**. Copy the key above and run the program `pastebin_gen --config YOUR_API_KEY_HERE`.
+      **If you run the program, but the API key is not avaiable, the program will crash.**
 
 ### Help
 
