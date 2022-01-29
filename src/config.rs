@@ -25,13 +25,13 @@ pub fn api_key_flag_was_passed(configuration: &APIConfiguration) -> bool {
 }
 
 pub fn create_configuration_file(configuration: &APIConfiguration) {
-    if api_key_flag_was_passed(configuration){
+    if api_key_flag_was_passed(configuration) {
         write_api_key_to_config_file(configuration);
     }
 }
 
 pub fn deserialize_configuration_file() -> Option<JSONData> {
-    if config_file_exists(){
+    if config_file_exists() {
         let config_file = fs::read_to_string("config.json");
 
         match config_file {
@@ -42,8 +42,7 @@ pub fn deserialize_configuration_file() -> Option<JSONData> {
 
             Err(err) => panic!("Error while trying to read configuration file: {}", err),
         }
-    }
-    else {
+    } else {
         None
     }
 }
