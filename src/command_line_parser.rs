@@ -11,9 +11,13 @@ pub struct Args {
     #[clap(short, long, required = true)]
     pub path: String,
 
-    /// Set the syntax highlighting options
+    /// Syntax highlighting options
     #[clap(short = 'f', long, required = false, default_value = "text")]
     pub paste_format: String,
+
+    /// Paste name
+    #[clap(short = 'n', long, required = false, default_value = "untitled")]
+    pub paste_name: String,
 }
 
 pub fn get_command_line_arguments() -> Args {
