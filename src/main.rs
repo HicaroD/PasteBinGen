@@ -18,7 +18,7 @@ async fn main() -> Result<(), Error> {
     let api_key = config_file.get("api_key").unwrap();
 
     let file_data = file_handler::get_file_as_string(args.path);
-    let res = api_helper::post_pastebin(api_key.to_string(), file_data, args.paste_format);
+    let res = api_helper::post_pastebin(api_key.to_string(), file_data, args.paste_format, args.paste_name);
     println!("{}", res.await?.text().await?);
     Ok(())
 }
