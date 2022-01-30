@@ -32,10 +32,11 @@ USAGE:
     pastebin_gen [OPTIONS] --path <PATH>
 
 OPTIONS:
-    -a, --api-key <API_KEY>    PasteBin API key [default: default]
-    -h, --help                 Print help information
-    -p, --path <PATH>          Path to file that you want to upload
-    -V, --version              Print version information
+    -a, --api-key <API_KEY>              PasteBin API key [default: default]
+    -f, --paste-format <PASTE_FORMAT>    Set the syntax highlighting options [default: text]
+    -h, --help                           Print help information
+    -p, --path <PATH>                    Path to file that you want to upload
+    -V, --version                        Print version information
    ```
    
 ### Limitations
