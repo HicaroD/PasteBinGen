@@ -21,9 +21,7 @@
 
    2. **Paste format options**
 
-      If you want to see the format options for enabling syntax highlighting, see that [list](https://pastebin.com/doc_api#5).
-      
-      If you don't set any formating option, it will have no syntax highlighting.
+      If you want to see the format options for enabling syntax highlighting, see that [list](https://pastebin.com/doc_api#5). If you don't set any formating option, it will have no syntax highlighting.
 
 ### Help
 
