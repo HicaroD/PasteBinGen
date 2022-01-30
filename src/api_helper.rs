@@ -2,7 +2,11 @@ use std::collections::HashMap;
 
 static PASTE_BIN_URL: &str = "https://pastebin.com/api/api_post.php";
 
-fn get_post_parameters(api_key: String, file_data: String, paste_format: String) -> HashMap<&'static str, String> {
+fn get_post_parameters(
+    api_key: String,
+    file_data: String,
+    paste_format: String,
+) -> HashMap<&'static str, String> {
     HashMap::from([
         ("api_dev_key", api_key),
         ("api_paste_code", file_data),
