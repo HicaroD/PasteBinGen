@@ -10,6 +10,10 @@ pub struct Args {
     /// Path to file that you want to upload
     #[clap(short, long, required = true)]
     pub path: String,
+
+    /// Set the syntax highlighting options
+    #[clap(short = 'f', long, required = false, default_value = "text")]
+    pub paste_format: String,
 }
 
 pub fn get_command_line_arguments() -> Args {
