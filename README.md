@@ -19,6 +19,10 @@
       If it's the first time you're using the program, you should configure the API key of PasteBin. In order to do that, you need to create an account on [PasteBin](https://pastebin.com/signup). After that, go to the [API's documentation](https://pastebin.com/doc_api) and find the section **"Your Unique Developer API Key"**. Copy the key above and configure the program `pastebin_gen --config YOUR_API_KEY_HERE`.
       **If you run the program, but the API key is not avaiable, the program will crash.**
 
+   2. **Paste format options**
+
+      If you want to see the format options for enabling syntax highlighting, see that [list](https://pastebin.com/doc_api#5).
+
 ### Help
 
    The usage is pretty straightforward. However, if you need help, try to run `pastebin_gen --help`.
