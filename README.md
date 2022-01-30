@@ -37,8 +37,9 @@ USAGE:
 
 OPTIONS:
     -a, --api-key <API_KEY>              PasteBin API key [default: default]
-    -f, --paste-format <PASTE_FORMAT>    Set the syntax highlighting options [default: text]
+    -f, --paste-format <PASTE_FORMAT>    Syntax highlighting options [default: text]
     -h, --help                           Print help information
+    -n, --paste-name <PASTE_NAME>        Paste name [default: untitled]
     -p, --path <PATH>                    Path to file that you want to upload
     -V, --version                        Print version information
    ```
