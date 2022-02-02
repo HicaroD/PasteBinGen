@@ -42,8 +42,8 @@ pub fn deserialize_configuration_file() -> Option<JSONData> {
 
         match config_file {
             Ok(config_file_content) => {
-                let config_file = serde_json::from_str::<JSONData>(&config_file_content).unwrap();
-                Some(config_file)
+                let config_file_data = serde_json::from_str::<JSONData>(&config_file_content).unwrap();
+                Some(config_file_data)
             }
 
             Err(err) => panic!("Error while trying to read configuration file: {}", err),
