@@ -47,23 +47,6 @@ pastebin_gen --api-key YOUR_API_KEY --path path/to/file --paste-format python --
 
    The usage is pretty straightforward. However, if you need help, try to run `pastebin_gen --help`.
    
-   ```
-pastebin_gen 0.1.3
-PasteBinGen
-A simple CLI for writing PasteBin texts.
-
-USAGE:
-    pastebin_gen [OPTIONS] --path <PATH>
-
-OPTIONS:
-    -a, --api-key <API_KEY>              PasteBin API key [default: default]
-    -f, --paste-format <PASTE_FORMAT>    Syntax highlighting options [default: text]
-    -h, --help                           Print help information
-    -n, --paste-name <PASTE_NAME>        Paste name [default: untitled]
-    -p, --path <PATH>                    Path to file that you want to upload
-    -V, --version                        Print version information
-   ```
-   
 ### Limitations
    1. **Maximum 10 pastes per 24h**
    
