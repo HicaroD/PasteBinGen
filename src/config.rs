@@ -15,19 +15,25 @@ pub fn config_file_exists() -> bool {
     Path::new("config.json").exists()
 }
 
+pub fn create_configuration_file() -> File {
+    File::create("config.json").expect("Unable to create configuration file")
+}
+
 pub fn write_api_key_to_config_file(configuration: &APIConfiguration) {
-    let config_file = File::create("config.json").expect("Can't create file");
-    serde_json::to_writer_pretty(config_file, configuration).expect("Invalid configuration");
+    if !config_file_exists() {
+        let _ = create_configuration_file();
+    }
+    if api_key_flag_was_passed(&configuration) {
+        let config_file = File::options()
+            .write(true)
+            .open("config.json")
+            .expect("Unable to open configuration file");
+        serde_json::to_writer_pretty(config_file, configuration).expect("Invalid configuration");
+    }
 }
 
 pub fn api_key_flag_was_passed(configuration: &APIConfiguration) -> bool {
     !configuration.api_key.eq("default")
-}
-
-pub fn create_configuration_file(configuration: &APIConfiguration) {
-    if api_key_flag_was_passed(configuration) {
-        write_api_key_to_config_file(configuration);
-    }
 }
 
 pub fn deserialize_configuration_file() -> Option<JSONData> {
@@ -46,3 +52,6 @@ pub fn deserialize_configuration_file() -> Option<JSONData> {
         None
     }
 }
+
+#[cfg(test)]
+mod tests {}
