@@ -1,11 +1,11 @@
 # PasteBinGen
 
-:memo: A command-line interface for creating pastes on PasteBin easily. 
+A command-line interface for creating pastes on PasteBin easily. 
 
-| Feature                 | Status             |
-|-------------------------|--------------------|
-| Set syntax highlighting | :heavy_check_mark: |
-| Set file name           | :heavy_check_mark: |
+| Feature                 | Status |
+|-------------------------|--------|
+| Set syntax highlighting | Done   |
+| Set file name           | Done   |
 
 ## Summary
 
