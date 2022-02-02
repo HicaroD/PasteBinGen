@@ -48,7 +48,7 @@ pastebin_gen --api-key YOUR_API_KEY --path path/to/file --paste-format python --
    The usage is pretty straightforward. However, if you need help, try to run `pastebin_gen --help`.
    
    ```
-pastebin_gen 0.1.2
+pastebin_gen 0.1.3
 PasteBinGen
 A simple CLI for writing PasteBin texts.
 
