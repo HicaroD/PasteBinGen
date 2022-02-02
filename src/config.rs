@@ -59,4 +59,23 @@ pub fn deserialize_configuration_file(config_file_path: &'static str) -> Option<
 }
 
 #[cfg(test)]
-mod tests {}
+mod tests {
+    use super::*;
+    use std::collections::HashMap;
+
+    #[test]
+    fn test_deserializer() {
+        let config_file_path = "src/tests/config_example.json";
+        let expected_result =
+            HashMap::from([("api_key".to_string(), "SOME_RANDOM_API_KEY".to_string())]);
+        assert_eq!(
+            deserialize_configuration_file(config_file_path),
+            Some(expected_result)
+        )
+    }
+
+    #[test]
+    fn test_if_config_file_exists() {
+        assert_eq!(config_file_exists("src/tests/config_example.json"), true);
+    }
+}
