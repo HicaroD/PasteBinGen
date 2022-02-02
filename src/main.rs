@@ -13,12 +13,18 @@ async fn main() -> Result<(), Error> {
         api_key: args.api_key,
     };
 
-    config::create_configuration_file(&config);
+    config::write_api_key_to_config_file(&config);
+
     let config_file = config::deserialize_configuration_file().unwrap();
     let api_key = config_file.get("api_key").unwrap();
 
     let file_data = file_handler::get_file_as_string(args.path);
-    let res = api_helper::post_pastebin(api_key.to_string(), file_data, args.paste_format, args.paste_name);
+    let res = api_helper::post_pastebin(
+        api_key.to_string(),
+        file_data,
+        args.paste_format,
+        args.paste_name,
+    );
     println!("{}", res.await?.text().await?);
     Ok(())
 }
