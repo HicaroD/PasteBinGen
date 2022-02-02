@@ -1,7 +1,15 @@
 [package]
 name = "pastebin_gen"
+description = "A command-line interface for writing PasteBin easily"
 version = "0.1.0"
 edition = "2021"
+author = "Hícaro <hdanrlley1@gmail.com>"
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/HicaroD/PasteBinGen"
+repository = "https://github.com/HicaroD/PasteBinGen"
+keyword = ["cli", "pastebin", "code"]
+categories = ["command-line-utilities"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
