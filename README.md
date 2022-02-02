@@ -9,13 +9,22 @@ A command-line interface for creating pastes on PasteBin easily.
 
 ## Summary
 
-1. [Installation](#installation)
-2. [Usage](#usage)
-3. [Help](#help)
-4. [Limitations](#limitations)
-5. [License](#license)
+1. [Requirements](#requirements)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Help](#help)
+5. [Limitations](#limitations)
+6. [License](#license)
+
+### Requirements
+
+   1. [Rust](https://www.rust-lang.org/tools/install)
 
 ### Installation
+
+   ```
+cargo install pastebin_gen
+   ```
 
 ### Usage
    1. **API key of PasteBin.**
