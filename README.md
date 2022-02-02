@@ -42,6 +42,8 @@ cargo install pastebin_gen
    ```
 pastebin_gen --api-key YOUR_API_KEY --path path/to/file --paste-format python --paste-name my_file_name
    ```
+   
+   **WARNING**: `--api-key` is not necessary unless you're setting it for the first time or you want to replace the current one. Additionally, `--paste-name` and `paste-format` are optional flags. 
 
 ### Help
 
