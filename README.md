@@ -12,9 +12,10 @@ A command-line interface for creating pastes on PasteBin easily.
 1. [Requirements](#requirements)
 2. [Installation](#installation)
 3. [Usage](#usage)
-4. [Help](#help)
-5. [Limitations](#limitations)
-6. [License](#license)
+4. [Example](#example)
+5. [Help](#help)
+6. [Limitations](#limitations)
+7. [License](#license)
 
 ### Requirements
 
@@ -29,19 +30,25 @@ cargo install pastebin_gen
 ### Usage
    1. **API key of PasteBin.**
 
-      If it's the first time you're using the program, you should configure the API key of PasteBin. In order to do that, you need to create an account on [PasteBin](https://pastebin.com/signup). After that, go to the [API's documentation](https://pastebin.com/doc_api) and find the section **"Your Unique Developer API Key"**. Copy the key above and configure the program `pastebin_gen --config YOUR_API_KEY_HERE`.
+      If it's the first time you're using the program, you should configure the API key of PasteBin. In order to do that, you need to create an account on [PasteBin](https://pastebin.com/signup). After that, go to the [API's documentation](https://pastebin.com/doc_api) and find the section **"Your Unique Developer API Key"**. Copy the key above and set the api key with the flag `api-key` alongside with the path of the file that you want to upload to PasteBin.
       **If you run the program, but the API key is not avaiable, the program will crash.**
 
    2. **Paste format options**
 
       If you want to see the format options for enabling syntax highlighting, see that [list](https://pastebin.com/doc_api#5). If you don't set any formating option, it will have no syntax highlighting.
 
+### Example
+
+   ```
+pastebin_gen --api-key YOUR_API_KEY --path path/to/file --paste-format python --paste-name my_file_name
+   ```
+
 ### Help
 
    The usage is pretty straightforward. However, if you need help, try to run `pastebin_gen --help`.
    
    ```
-pastebin_gen 0.1.0
+pastebin_gen 0.1.2
 PasteBinGen
 A simple CLI for writing PasteBin texts.
 
