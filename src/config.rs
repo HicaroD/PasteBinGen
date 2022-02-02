@@ -26,6 +26,7 @@ pub fn write_api_key_to_config_file(configuration: &APIConfiguration) {
     if api_key_flag_was_passed(&configuration) {
         let config_file = File::options()
             .write(true)
+            .truncate(true)
             .open("config.json")
             .expect("Unable to open configuration file");
         serde_json::to_writer_pretty(config_file, configuration).expect("Invalid configuration");
