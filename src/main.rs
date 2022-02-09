@@ -5,7 +5,7 @@ mod file_handler;
 
 use reqwest::Error;
 
-static CONFIG_FILE_PATH: &'static str = "config.json";
+static CONFIG_FILE_PATH: &'static str = "~/config.json";
 
 #[tokio::main]
 async fn main() -> Result<(), Error> {
