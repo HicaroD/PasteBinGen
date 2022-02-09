@@ -2,7 +2,7 @@ use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::fs;
 use std::fs::File;
-use std::path::Path;
+use std::path::PathBuf;
 
 type JSONData = HashMap<String, String>;
 
@@ -11,16 +11,16 @@ pub struct APIConfiguration {
     pub api_key: String,
 }
 
-pub fn config_file_exists(file_path: &'static str) -> bool {
-    Path::new(file_path).exists()
+pub fn config_file_exists(file_path: &PathBuf) -> bool {
+    file_path.is_file()
 }
 
-pub fn create_configuration_file(file_path: &'static str) -> File {
-    File::create(Path::new(file_path)).expect("Unable to create configuration file")
+pub fn create_configuration_file(file_path: &PathBuf) -> File {
+    File::create(file_path).expect("Unable to create configuration file")
 }
 
 pub fn write_api_key_to_config_file(
-    config_file_path: &'static str,
+    config_file_path: &PathBuf,
     configuration: &APIConfiguration,
 ) {
     if !config_file_exists(&config_file_path) {
@@ -40,7 +40,7 @@ pub fn api_key_flag_was_passed(configuration: &APIConfiguration) -> bool {
     !configuration.api_key.eq("default")
 }
 
-pub fn deserialize_configuration_file(config_file_path: &'static str) -> Option<JSONData> {
+pub fn deserialize_configuration_file(config_file_path: &PathBuf) -> Option<JSONData> {
     if config_file_exists(&config_file_path) {
         let config_file = fs::read_to_string(config_file_path);
 
@@ -78,4 +78,5 @@ mod tests {
     fn test_if_config_file_exists() {
         assert_eq!(config_file_exists("src/tests/config_example.json"), true);
     }
+
 }
