@@ -4,8 +4,7 @@ mod config;
 mod file_handler;
 
 use reqwest::Error;
-
-static CONFIG_FILE_PATH: &'static str = "~/config.json";
+use dirs;
 
 #[tokio::main]
 async fn main() -> Result<(), Error> {
@@ -15,9 +14,12 @@ async fn main() -> Result<(), Error> {
         api_key: args.api_key,
     };
 
-    config::write_api_key_to_config_file(&CONFIG_FILE_PATH, &config);
+    let mut config_file_path = dirs::home_dir().unwrap();
+    config_file_path.push("config.json");
 
-    let config_file = config::deserialize_configuration_file(&CONFIG_FILE_PATH).unwrap();
+    config::write_api_key_to_config_file(&config_file_path, &config);
+
+    let config_file = config::deserialize_configuration_file(&config_file_path).unwrap();
     let api_key = config_file.get("api_key").unwrap();
 
     let file_data = file_handler::get_file_as_string(args.path);
