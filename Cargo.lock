@@ -570,7 +570,7 @@ dependencies = [
 
 [[package]]
 name = "pastebin_gen"
-version = "0.1.7"
+version = "1.0.0"
 dependencies = [
  "clap",
  "dirs",
