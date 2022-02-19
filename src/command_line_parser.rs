@@ -1,4 +1,4 @@
-use clap::*;
+use clap::Parser;
 
 #[derive(Parser, Debug)]
 #[clap(author = "PasteBinGen", version, about = "A simple CLI for writing PasteBin texts.", long_about = None)]
@@ -18,8 +18,4 @@ pub struct Args {
     /// Paste name
     #[clap(short = 'n', long, required = false, default_value = "untitled")]
     pub paste_name: String,
-}
-
-pub fn get_command_line_arguments() -> Args {
-    Args::parse()
 }
