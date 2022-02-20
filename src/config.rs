@@ -20,6 +20,7 @@ impl APIConfiguration {
 pub fn write_api_key_to_config_file(config_file_path: &Path, configuration: &APIConfiguration) {
     if !configuration.is_default_key() {
         let config_file = File::options()
+            .create(true)
             .write(true)
             .truncate(true)
             .open(config_file_path)
