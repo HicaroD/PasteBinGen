@@ -47,7 +47,13 @@ async fn main() -> Result<(), Error> {
 
     write_api_key_to_config_file(&config_file_path, &config);
 
-    let config_file = deserialize_configuration_file(&config_file_path).unwrap(); // ERROR HANDLING
+    let config_file = match deserialize_configuration_file(&config_file_path) {
+        Err(e) => {
+            eprintln!("{e}");
+            std::process::exit(1);
+        }
+        Ok(f) => f,
+    };
 
     let api_key = match config_file.get("api_key") {
         Some(key) => key,
