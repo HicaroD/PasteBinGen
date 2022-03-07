@@ -52,7 +52,7 @@ pastebin_gen --api-key YOUR_API_KEY --path path/to/file --paste-format python --
 ### Limitations
    1. **Maximum 10 pastes per 24h**
    
-      The PasteBin's API does not allow a free user to create more than 10 folders within the 24 hour limit.
+      The PasteBin's API does not allow a free user to create more than 10 pastes within the 24 hour limit.
 
 ### License
 This project is licensed under the [MIT](LICENSE) license.
